@@ -1,12 +1,45 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/login/login",
-			"style": {
-				"navigationBarTitleText": "时光岛"
-			}
+	"pages": [{
+		"path": "pages/login/login",
+		"style": {
+			"navigationBarTitleText": "时光岛"
 		}
-	],
+	}, {
+		"path": "pages/tab1/index",
+		"style": {
+			"navigationBarTitleText": "首页"
+		}
+	}, {
+		"path": "pages/tab2/index",
+		"style": {
+			"navigationBarTitleText": "其他"
+		}
+	}, {
+		"path": "pages/tab3/index",
+		"style": {
+			"navigationBarTitleText": "我的"
+		}
+	}],
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#FFD833", //8a8a8a
+		"list": [{
+			"pagePath": "pages/tab1/index",
+			"iconPath": "static/home.png",
+			"selectedIconPath": "static/home-cur.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/tab2/index",
+			"iconPath": "static/other.png",
+			"selectedIconPath": "static/other-cur.png",
+			"text": "其他"
+		}, {
+			"pagePath": "pages/tab3/index",
+			"iconPath": "static/my.png",
+			"selectedIconPath": "static/my-cur.png",
+			"text": "我的"
+		}]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

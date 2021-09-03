@@ -1,1 +1,1 @@
-<view class="content"><image class="logo" src="/static/logo.png"></image><view class="text-area"><text class="title">{{title}}</text></view></view>
+<view class="login"><image class="logo" src="/static/login-bg.jpg" data-event-opts="{{[['tap',[['login',['$event']]]]]}}" bindtap="__e"></image></view>
