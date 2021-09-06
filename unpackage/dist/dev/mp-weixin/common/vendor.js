@@ -876,7 +876,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_NAME":"timeLand","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"timeLand","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -2060,6 +2060,40 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+
+/***/ 17:
+/*!*********************************************!*\
+  !*** E:/wx-project/timeland/utils/wxApi.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function getUserProfile() {
+  return new Promise(function (resolve, reject) {
+    wx.getUserProfile({
+      desc: '获取您的昵称，头像',
+      success: function success(res) {
+        resolve(res);
+      } });
+
+  });
+}
+
+function wxLogin() {
+  return new Promise(function (resolve, reject) {
+    wx.login({
+      success: function success(res) {
+        resolve(res.code);
+      } });
+
+  });
+}
+
+module.exports = {
+  getUserProfile: getUserProfile,
+  wxLogin: wxLogin };
 
 /***/ }),
 
@@ -7590,7 +7624,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_NAME":"timeLand","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"timeLand","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7611,14 +7645,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_NAME":"timeLand","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"timeLand","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_NAME":"timeLand","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"timeLand","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7704,7 +7738,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_NAME":"timeLand","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"timeLand","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8112,40 +8146,6 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 21:
-/*!***************************************************!*\
-  !*** E:/wx-project/timeland/pages/utils/wxApi.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function getUserProfile() {
-  return new Promise(function (resolve, reject) {
-    wx.getUserProfile({
-      desc: '获取您的昵称，头像',
-      success: function success(res) {
-        resolve(res);
-      } });
-
-  });
-}
-
-function wxLogin() {
-  return new Promise(function (resolve, reject) {
-    wx.login({
-      success: function success(res) {
-        resolve(res.code);
-      } });
-
-  });
-}
-
-module.exports = {
-  getUserProfile: getUserProfile,
-  wxLogin: wxLogin };
-
-/***/ }),
-
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -8185,6 +8185,68 @@ module.exports = g;
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ 41:
+/*!********************************************!*\
+  !*** E:/wx-project/timeland/utils/http.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(uni) {function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var CONFIG = __webpack_require__(/*! ../config/config.js */ 42);
+
+module.exports = /*#__PURE__*/function () {"use strict";function HTTP() {_classCallCheck(this, HTTP);}_createClass(HTTP, null, [{ key: "post", value: function post(
+    _url, _params) {
+      console.log('_url', _url);
+      console.log('_params', _params);
+      return new Promise(function (resolve, reject) {//  uni.hideLoading();
+        uni.showLoading({
+          title: '请求中' });
+
+        uni.request({
+          url: CONFIG.BASE_CONFIG.backServer + CONFIG.BASE_CONFIG_BACK_URL[_url].url, //仅为示例，并非真实接口地址。
+          method: 'POST',
+          data: _params,
+          header: {
+            'content-type': 'application/json', // 默认值
+            token: uni.getStorageSync('token') ? uni.getStorageSync('token') : '' },
+
+          success: function success(res) {
+            console.log('请求返回结果-----', res);
+          },
+          fail: function fail(err) {
+            uni.hideLoading();
+            reject(err);
+          } });
+
+      });
+    } }]);return HTTP;}();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 42:
+/*!***********************************************!*\
+  !*** E:/wx-project/timeland/config/config.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var BASE_CONFIG = {
+  backServer: 'http://127.0.0.1:8092' };
+
+
+var BASE_CONFIG_BACK_URL = {
+  "login": { //登录
+    "url": "/WxLogin/Wx" } };
+
+
+
+module.exports = {
+  BASE_CONFIG: BASE_CONFIG,
+  BASE_CONFIG_BACK_URL: BASE_CONFIG_BACK_URL };
 
 /***/ })
 

@@ -5,10 +5,8 @@
 </template>
 
 <script>
-	let {
-		getUserProfile,
-		wxLogin
-	} = require('../utils/wxApi.js')
+	let { getUserProfile, wxLogin } = require('../../utils/wxApi.js')
+	const http = require('../../utils/http')
 	let global = getApp().globalData
 	export default {
 		data() {
@@ -21,6 +19,9 @@
 					wxLogin().then(code => {
 						console.log('code----', code)
 						//请求后端登录接口
+						http.post('login', {code: code}).then(res => {
+							
+						})
 						uni.switchTab({
 							url:'../tab1/index'
 						})
