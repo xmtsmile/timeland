@@ -18,6 +18,8 @@ module.exports = class HTTP {
 				},
 				success: (res) => {
 					console.log('请求返回结果-----', res);
+					reslove(res)
+					uni.hideLoading();
 				},
 				fail: (err) => {
 					uni.hideLoading();
