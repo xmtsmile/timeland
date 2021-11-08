@@ -10,6 +10,11 @@
 			"navigationBarTitleText": "首页"
 		}
 	}, {
+		"path": "pages/tab1/subPage/diary",
+		"style": {
+			"navigationBarTitleText": "随记"
+		}
+	}, {
 		"path": "pages/tab2/index",
 		"style": {
 			"navigationBarTitleText": "其他"
@@ -22,7 +27,7 @@
 	}],
 	"tabBar": {
 		"color": "#7A7E83",
-		"selectedColor": "#FFD833", //8a8a8a
+		"selectedColor": "#FFD833",
 		"list": [{
 			"pagePath": "pages/tab1/index",
 			"iconPath": "static/home.png",

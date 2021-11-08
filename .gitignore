@@ -1,0 +1,6 @@
+.idea/
+.idea
+.history
+unpackage/dist/
+node_modules/
+miniprogram_npm/

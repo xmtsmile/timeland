@@ -2,6 +2,7 @@
   "pages": [
     "pages/login/login",
     "pages/tab1/index",
+    "pages/tab1/subPage/diary",
     "pages/tab2/index",
     "pages/tab3/index"
   ],
@@ -36,5 +37,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap17.json"
 }
