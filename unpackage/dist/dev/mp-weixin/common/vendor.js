@@ -8220,8 +8220,8 @@ module.exports = /*#__PURE__*/function () {"use strict";function HTTP() {_classC
 
           success: function success(res) {
             console.log('请求返回结果-----', res);
-            reslove(res);
             uni.hideLoading();
+            resolve(res);
           },
           fail: function fail(err) {
             uni.hideLoading();
