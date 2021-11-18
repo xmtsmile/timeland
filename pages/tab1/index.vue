@@ -33,7 +33,7 @@
 		methods: {
 			goDiary() {
 				uni.navigateTo({
-					url: './subPage/diary'
+					url: './subPage/diaryList'
 				});
 			},
 			goTakePhotos() {

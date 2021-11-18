@@ -17,4 +17,12 @@
 
 <style>
 	/*每个页面公共css */
+	.clearfix:after {
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
+	}
 </style>

@@ -1,0 +1,42 @@
+
+.diary-list {
+	margin: 20rpx 20rpx;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	min-height: 96vh;
+}
+.diary-item {
+	padding: 20rpx 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+}
+.title {
+	font-weight: 700;
+	font-size: 34rpx;
+	padding-bottom: 10rpx;
+}
+.content {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	line-height: 40rpx;
+	font-size: 27rpx;
+}
+.item-border {
+	padding-bottom: 30rpx;
+	border-bottom: 1px solid #ededed;
+}
+.add-btn {
+	position: fixed;
+	bottom: 40rpx;
+	z-index: 1000;
+	right: 30rpx;
+}
+

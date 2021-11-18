@@ -1,30 +1,43 @@
 {
 	"pages": [{
-		"path": "pages/login/login",
-		"style": {
-			"navigationBarTitleText": "时光岛"
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "时光岛"
+			}
+		}, {
+			"path": "pages/tab1/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		}, {
+			"path": "pages/tab1/subPage/diary",
+			"style": {
+				"navigationBarTitleText": "新增"
+			}
+		},
+		{
+			"path": "pages/tab1/subPage/diaryList",
+			"style": {
+				"navigationBarTitleText": "随记"
+			}
+		}, {
+			"path": "pages/tab1/subPage/diaryDetail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		},
+		{
+			"path": "pages/tab2/index",
+			"style": {
+				"navigationBarTitleText": "其他"
+			}
+		}, {
+			"path": "pages/tab3/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
 		}
-	}, {
-		"path": "pages/tab1/index",
-		"style": {
-			"navigationBarTitleText": "首页"
-		}
-	}, {
-		"path": "pages/tab1/subPage/diary",
-		"style": {
-			"navigationBarTitleText": "随记"
-		}
-	}, {
-		"path": "pages/tab2/index",
-		"style": {
-			"navigationBarTitleText": "其他"
-		}
-	}, {
-		"path": "pages/tab3/index",
-		"style": {
-			"navigationBarTitleText": "我的"
-		}
-	}],
+	],
 	"tabBar": {
 		"color": "#7A7E83",
 		"selectedColor": "#FFD833",

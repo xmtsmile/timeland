@@ -165,7 +165,7 @@ var _default =
   methods: {
     goDiary: function goDiary() {
       uni.navigateTo({
-        url: './subPage/diary' });
+        url: './subPage/diaryList' });
 
     },
     goTakePhotos: function goTakePhotos() {

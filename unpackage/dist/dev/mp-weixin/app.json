@@ -3,6 +3,8 @@
     "pages/login/login",
     "pages/tab1/index",
     "pages/tab1/subPage/diary",
+    "pages/tab1/subPage/diaryList",
+    "pages/tab1/subPage/diaryDetail",
     "pages/tab2/index",
     "pages/tab3/index"
   ],
@@ -37,6 +39,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap17.json"
+  "usingComponents": {}
 }

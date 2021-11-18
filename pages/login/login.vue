@@ -19,18 +19,21 @@
 					wxLogin().then(code => {
 						console.log('code----', code)
 						//请求后端登录接口
-						http.post('login', {code: code}).then(res => {
-							if (res.token) {
-								uni.setStorage({
-								    key: 'token',
-								    data: res.token,
-								    success: function () {
-								        uni.switchTab({
-								        	url:'../tab1/index'
-								        })
-								    }
-								});
-							}
+						// http.post('login', {code: code}).then(res => {
+						// 	if (res.token) {
+						// 		uni.setStorage({
+						// 		    key: 'token',
+						// 		    data: res.token,
+						// 		    success: function () {
+						// 		        uni.switchTab({
+						// 		        	url:'../tab1/index'
+						// 		        })
+						// 		    }
+						// 		});
+						// 	}
+						// })
+						uni.switchTab({
+							url:'../tab1/index'
 						})
 					})
 				})
