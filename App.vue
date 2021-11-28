@@ -1,10 +1,13 @@
 <script>
 	export default {
-		onLaunch: function() {
-			console.log('App Launch')
-		},
+		onLaunch: function() {},
 		onShow: function() {
-			console.log('App Show')
+			console.log('bbbbb', uni.getStorageSync('token'))
+			if (!uni.getStorageSync('token')) {
+				uni.reLaunch({
+					url: '/pages/login/login'
+				})
+			}
 		},
 		onHide: function() {
 			console.log('App Hide')
@@ -24,5 +27,11 @@
 		content: " ";
 		clear: both;
 		height: 0;
+	}
+	.theme-color {
+		color:#C0C0E0;
+	}
+	.theme-bg {
+		background-color: #C0C0E0;
 	}
 </style>

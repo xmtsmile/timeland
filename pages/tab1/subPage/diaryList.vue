@@ -13,49 +13,24 @@
 </template>
 
 <script>
+	const http = require('../../../utils/http')
 	export default {
 		data() {
 			return {
-				diaryList: [{
-						time: '2020-09-10',
-						content: '今天天气真不错呀'
-					},
-					{
-						time: '2020-10-10',
-						content: '今天下雨了'
-					},
-					{
-						time: '2021-11-18',
-						content: '今天中午没下雨，和丁大哥出去别的园区吃了一个饭，走了很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久很久'
-					},
-					{
-						time: '2020-09-10',
-						content: '今天天气真不错呀'
-					},
-					{
-						time: '2020-10-10',
-						content: '今天下雨了'
-					},
-					{
-						time: '2020-09-10',
-						content: '今天天气真不错呀'
-					},
-					{
-						time: '2020-10-10',
-						content: '今天下雨了'
-					},
-					{
-						time: '2020-09-10',
-						content: '今天天气真不错呀'
-					},
-					{
-						time: '2020-10-10',
-						content: '今天下雨了'
-					}
-				]
+				diaryList: [],
+				pageNum: 1
 			}
 		},
+		onLoad() {
+			this.queryList(this.pageNum)
+		},
 		methods: {
+			queryList(pageNum) {
+				http.post('queryNoteList', {pageNum: pageNum}).then(res => {
+					console.log('res', res)
+					
+				})
+			},
 			goDiaryDetail() {
 				uni.navigateTo({
 					url: './diaryDetail'

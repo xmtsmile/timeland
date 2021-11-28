@@ -1,13 +1,13 @@
 {
 	"pages": [{
-			"path": "pages/login/login",
-			"style": {
-				"navigationBarTitleText": "时光岛"
-			}
-		}, {
 			"path": "pages/tab1/index",
 			"style": {
 				"navigationBarTitleText": "首页"
+			}
+		}, {
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "时光岛"
 			}
 		}, {
 			"path": "pages/tab1/subPage/diary",
@@ -40,7 +40,7 @@
 	],
 	"tabBar": {
 		"color": "#7A7E83",
-		"selectedColor": "#FFD833",
+		"selectedColor": "#C0C0E0",
 		"list": [{
 			"pagePath": "pages/tab1/index",
 			"iconPath": "static/home.png",
@@ -63,5 +63,6 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+		// "navigationStyle": "custom"
 	}
 }
