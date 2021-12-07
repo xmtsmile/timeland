@@ -4,8 +4,8 @@ const BASE_CONFIG = {
 
 const BASE_CONFIG_BACK_URL = {
     "login": {"url": "/WxLogin/Wx"}, //登录
-	"queryNoteList": {"url": "/Note/selectnote"} //查询notes列表
-	
+	"queryNoteList": {"url": "/Note/selectnote"} ,//查询notes列表
+	"addNote": {"url": "/Note/addnote"} //新增notes
 }
 
 module.exports = {
