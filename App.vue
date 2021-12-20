@@ -2,12 +2,12 @@
 	export default {
 		onLaunch: function() {},
 		onShow: function() {
-			console.log('bbbbb', uni.getStorageSync('token'))
-			if (!uni.getStorageSync('token')) {
-				uni.reLaunch({
-					url: '/pages/login/login'
-				})
-			}
+			// console.log('bbbbb', uni.getStorageSync('token'))
+			// if (!uni.getStorageSync('token')) {
+			// 	uni.reLaunch({
+			// 		url: '/pages/login/login'
+			// 	})
+			// }
 		},
 		onHide: function() {
 			console.log('App Hide')

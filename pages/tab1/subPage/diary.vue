@@ -1,7 +1,7 @@
 <template>
 	<view class="diary">
 		<view class="section">
-			<textarea maxlength="-1" @blur="bindDiaryTextBlur" placeholder="请输入" />
+			<textarea maxlength="-1" @input="bindDiaryTextBlur" placeholder="请输入" />
 		</view>
 		<!-- <view>
 			<image @click="uploadPic" class="upload-image" src="../../../static/addPic.png"></image>
