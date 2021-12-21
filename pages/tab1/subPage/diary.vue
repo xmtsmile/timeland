@@ -36,7 +36,9 @@
 				console.log('diaryText', this.diaryText)
 				http.post('addNote', {text: this.diaryText}).then(res => {
 					console.log('res', res)
-					
+					// uni.navigateBack({
+					//     delta: 2
+					// });
 				})
 			}
 		}

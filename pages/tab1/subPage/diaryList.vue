@@ -33,12 +33,12 @@
 			},
 			goDiaryDetail() {
 				uni.navigateTo({
-					url: './diaryDetail'
+					url: '/pages/tab1/subPage/diaryDetail'
 				});
 			},
 			addDiary() {
 				uni.navigateTo({
-					url: './diary'
+					url: '/pages/tab1/subPage/diary'
 				});
 			}
 		}
