@@ -20,7 +20,7 @@ module.exports = class HTTP {
 				success: function(res) {
 					console.log('请求返回结果-----', res);
 					uni.hideLoading();
-					let result = res.data.data
+					let result = res.data
 					if (result.respcode === 500) {
 						uni.showModal({
 							title: '提示',
@@ -34,7 +34,7 @@ module.exports = class HTTP {
 							}
 						});
 					} else {
-						resolve(res.data.data)
+						resolve(res.data)
 					}
 				},
 				fail: (err) => {

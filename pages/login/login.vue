@@ -19,13 +19,14 @@
 					wxLogin().then(code => {
 						console.log('code----', code)
 						http.post('login', {code: code}).then(res => {
+							console.log('dasdasda',res)
 							if (res.data && res.data.token) {
 								uni.setStorage({
 								    key: 'token',
 								    data: res.data.token,
 								    success: function () {
 								        uni.switchTab({
-								        	url:'../tab1/index'
+								        	url:'/pages/tab1/index'
 								        })
 								    }
 								});
