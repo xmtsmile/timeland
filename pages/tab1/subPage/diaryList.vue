@@ -2,8 +2,8 @@
 	<view class="diary-list">
 		<view v-for="item in diaryList" class="diary-item" @click="goDiaryDetail">
 			<view class="item-border">
-				<view class="title">{{item.time}}</view>
-				<view class="content">{{item.content}}</view>
+				<view class="title">{{item.createDate}}</view>
+				<view class="content">{{item.text}}</view>
 			</view>
 		</view>
 		<view class="add-btn" @click="addDiary">
@@ -21,14 +21,14 @@
 				pageNum: 1
 			}
 		},
-		onLoad() {
+		onShow() {
 			this.queryList(this.pageNum)
 		},
 		methods: {
 			queryList(pageNum) {
 				http.post('queryNoteList', {pageNum: pageNum}).then(res => {
 					console.log('res', res)
-					
+					this.diaryList = res.data
 				})
 			},
 			goDiaryDetail() {

@@ -29,16 +29,16 @@
 			// 	})
 			// },
 			bindDiaryTextBlur(e) {
-				console.log('e', e)
 				this.diaryText = e.detail.value
 			},
 			sureNewDiary() {
 				console.log('diaryText', this.diaryText)
 				http.post('addNote', {text: this.diaryText}).then(res => {
-					console.log('res', res)
-					// uni.navigateBack({
-					//     delta: 2
-					// });
+					if (res) {
+						uni.navigateBack({
+						    delta: 1
+						});
+					}
 				})
 			}
 		}
